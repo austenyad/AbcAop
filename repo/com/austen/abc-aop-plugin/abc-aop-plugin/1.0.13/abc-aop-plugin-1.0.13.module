@@ -1,0 +1,96 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.austen.abc-aop-plugin",
+    "module": "abc-aop-plugin",
+    "version": "1.0.13",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.10.2"
+    }
+  },
+  "variants": [
+    {
+      "name": "apiElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.24"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "abc-aop-plugin-1.0.13.jar",
+          "url": "abc-aop-plugin-1.0.13.jar",
+          "size": 18372,
+          "sha512": "b8720105dfab768069e2e9f7d7aa3f6cd98a62de0031cf2b05733e36d1c5f19b9f2d87acbc653f6d0acc3d59acf183719fa45f3e37b039b0d1c8fff4a4957922",
+          "sha256": "4e1b92897049e0e1bbc88c59a3bc714d1f599419c52fd81a68950815f31ded55",
+          "sha1": "2b3a46831b2b5f20914f606a19886fe9beafea6a",
+          "md5": "86dbe0ea03909a9f1c29e37e8bb96189"
+        }
+      ]
+    },
+    {
+      "name": "runtimeElements",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.jvm.version": 17,
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "com.android.tools.build",
+          "module": "gradle",
+          "version": {
+            "requires": "8.8.1"
+          }
+        },
+        {
+          "group": "org.javassist",
+          "module": "javassist",
+          "version": {
+            "requires": "3.30.2-GA"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "1.9.24"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "abc-aop-plugin-1.0.13.jar",
+          "url": "abc-aop-plugin-1.0.13.jar",
+          "size": 18372,
+          "sha512": "b8720105dfab768069e2e9f7d7aa3f6cd98a62de0031cf2b05733e36d1c5f19b9f2d87acbc653f6d0acc3d59acf183719fa45f3e37b039b0d1c8fff4a4957922",
+          "sha256": "4e1b92897049e0e1bbc88c59a3bc714d1f599419c52fd81a68950815f31ded55",
+          "sha1": "2b3a46831b2b5f20914f606a19886fe9beafea6a",
+          "md5": "86dbe0ea03909a9f1c29e37e8bb96189"
+        }
+      ]
+    }
+  ]
+}
