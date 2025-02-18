@@ -38,7 +38,7 @@ object TransformPlugin : BasePlugin() {
                     it.variant = variant.name
                 }
 
-                variant.artifacts.forScope(ScopedArtifacts.Scope.ALL)
+                variant.artifacts.forScope(ScopedArtifacts.Scope.PROJECT)
                     .use(task)
                     .toTransform(
                         ScopedArtifact.CLASSES,

@@ -51,16 +51,11 @@ abstract class AssembleAbcAopTask : DefaultTask() {
                 )
             )
         )
-
         allJars.get().forEach { file ->
-            println("handling " + file.asFile.absolutePath)
+            println("handling " + file.asFile.getAbsolutePath())
             val jarFile = JarFile(file.asFile)
-
-            jarFile.entries().iterator().forEach innerContinue@{ jarEntry ->
+            jarFile.entries().iterator().forEach { jarEntry ->
                 println("Adding from jar ${jarEntry.name}")
-                if (jarEntry.isDirectory || jarEntry.name.isEmpty() || jarEntry.name.startsWith("META-INF/") || "module-info.class" == jarEntry.name) {
-                    return@innerContinue
-                }
                 jarOutput.putNextEntry(JarEntry(jarEntry.name))
                 jarFile.getInputStream(jarEntry).use {
                     it.copyTo(jarOutput)
@@ -73,12 +68,12 @@ abstract class AssembleAbcAopTask : DefaultTask() {
             println("handling " + directory.asFile.absolutePath)
             directory.asFile.walk().forEach { file ->
                 if (file.isFile) {
-                    if (file.name.endsWith("AA.class")) {
+                    if (file.name.endsWith("SomeSource.class")) {
                         println("Found $file.name")
                         val interfaceClass =
-                            pool.makeInterface("com.example.abcaop.SomeInterface")
+                            pool.makeInterface("com.example.abcaop.SomeInterface");
                         println("Adding $interfaceClass")
-                        jarOutput.putNextEntry(JarEntry("com/example/abcaop/SomeInterface.class"))
+                        jarOutput.putNextEntry(JarEntry("com/example/example/SomeInterface.class"))
                         jarOutput.write(interfaceClass.toBytecode())
                         jarOutput.closeEntry()
                         val ctClass = file.inputStream().use {
